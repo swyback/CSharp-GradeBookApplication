@@ -19,7 +19,6 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException("cannot be less than 5 students");
             }
 
-
             if (averageGrade >= 80)
                 return 'A';
             else if (averageGrade >= 60 && averageGrade <=80)
@@ -30,7 +29,21 @@ namespace GradeBook.GradeBooks
                 return 'D';
             else
                 return 'F';
-          
+        }
+
+        public override void CalculateStatistics()
+        {
+            if(Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+                return;
+            }
+            else
+            {
+                base.CalculateStatistics();
+            }
+
+
         }
     }
 }
