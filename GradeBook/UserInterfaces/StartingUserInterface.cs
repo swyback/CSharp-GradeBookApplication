@@ -41,7 +41,7 @@ namespace GradeBook.UserInterfaces
                 return;
             }
             var name = parts[2];
-            BaseGradeBook gradeBook; //= new BaseGradeBook(name);
+            BaseGradeBook gradeBook;
 
             if (name == "standard")
             {
@@ -56,7 +56,6 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine("{0} is not a supported type of gradebook, please try again", name);
                 return;
             }
-
 
             Console.WriteLine("Created gradebook {0}.", name);
             GradeBookUserInterface.CommandLoop(gradeBook);
